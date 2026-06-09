@@ -145,7 +145,7 @@
       border-radius: 16px;
       padding: 24px 20px;
       transition: 0.2s ease;
-      min-height: 145px;
+      min-height: 175px;
     }
 
     .card:hover,
@@ -175,12 +175,78 @@
       color: #d4af37;
     }
 
+    .price-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .price-box {
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 10px;
+      padding: 9px 8px;
+      text-align: center;
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    .price-label {
+      display: block;
+      color: #a8a29e;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .price-value {
+      color: #d4af37;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
     .button-text {
       margin-top: 15px;
       color: #d4af37;
       font-size: 12px;
       font-weight: 900;
       letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .discount-box {
+      max-width: 900px;
+      margin: 18px auto 0;
+      border: 1px dashed rgba(212, 175, 55, 0.45);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+      color: #d4af37;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.7;
+    }
+
+    .discount-box span {
+      color: #f5f1e8;
+    }
+
+    .soup-notice {
+      max-width: 900px;
+      margin: 0 auto 18px;
+      padding: 12px 14px;
+      border-left: 3px solid #d4af37;
+      background: rgba(212, 175, 55, 0.08);
+      color: #d4af37;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .soup-notice span {
+      color: #f5f1e8;
       text-transform: uppercase;
     }
 
@@ -245,19 +311,10 @@
     .notice {
       margin-top: 30px;
       text-align: center;
-      color: #9f968a;
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 26px;
-      color: #d4af37;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-weight: 700;
+      color: #b8b1a7;
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.65;
     }
 
     @media (max-width: 720px) {
@@ -285,6 +342,10 @@
       .level-grid,
       .soup-grid {
         grid-template-columns: 1fr;
+      }
+
+      .price-row {
+        grid-template-columns: 1fr 1fr;
       }
 
       .card h3 {
@@ -316,45 +377,14 @@
       </p>
 
       <div class="rules-list">
-        <div class="rule">
-          <div class="number">01</div>
-          <div>All you can eat is limited to <span class="badge">90 minutes per table</span>.</div>
-        </div>
-
-        <div class="rule">
-          <div class="number">02</div>
-          <div>All guests at the table must choose the same level: <span class="badge">Regular or Premium</span>.</div>
-        </div>
-
-        <div class="rule">
-          <div class="number">03</div>
-          <div>Guests will be charged by the <span class="badge">stated size of the party</span>.</div>
-        </div>
-
-        <div class="rule">
-          <div class="number">04</div>
-          <div>A <span class="badge">15% gratuity</span> will be added to parties of 6 or more. Payments with gratuity must be made using <span class="badge">one payment type only</span>.</div>
-        </div>
-
-        <div class="rule">
-          <div class="number">05</div>
-          <div>A maximum of <span class="badge">2 credit cards</span> may be used per table.</div>
-        </div>
-
-        <div class="rule">
-          <div class="number">06</div>
-          <div>Any leftovers will incur a <span class="badge">$7 additional charge per person</span>.</div>
-        </div>
-
-        <div class="rule">
-          <div class="number">07</div>
-          <div><span class="badge">No take-out/to-go boxes</span> can be provided for leftover food.</div>
-        </div>
-
-        <div class="rule">
-          <div class="number">08</div>
-          <div><span class="badge">Dinner pricing</span> applies all day on weekends, Saturday/Sunday, and holidays.</div>
-        </div>
+        <div class="rule"><div class="number">01</div><div>All you can eat is limited to <span class="badge">90 minutes per table</span>.</div></div>
+        <div class="rule"><div class="number">02</div><div>All guests at the table must choose the same level: <span class="badge">Regular or Premium</span>.</div></div>
+        <div class="rule"><div class="number">03</div><div>Guests will be charged by the <span class="badge">stated size of the party</span>.</div></div>
+        <div class="rule"><div class="number">04</div><div>A <span class="badge">15% gratuity</span> will be added to parties of 6 or more. Payments with gratuity must be made using <span class="badge">one payment type only</span>.</div></div>
+        <div class="rule"><div class="number">05</div><div>A maximum of <span class="badge">2 credit cards</span> may be used per table.</div></div>
+        <div class="rule"><div class="number">06</div><div>Any leftovers will incur a <span class="badge">$7 additional charge per person</span>.</div></div>
+        <div class="rule"><div class="number">07</div><div><span class="badge">No take-out/to-go boxes</span> can be provided for leftover food.</div></div>
+        <div class="rule"><div class="number">08</div><div><span class="badge">Dinner pricing</span> applies all day on weekends, Saturday/Sunday, and holidays.</div></div>
       </div>
     </section>
 
@@ -370,14 +400,46 @@
         <a class="card regular" href="regular.html">
           <h3>Regular</h3>
           <p>Classic all-you-can-eat selection with regular meat options.</p>
+
+          <div class="price-row">
+            <div class="price-box">
+              <span class="price-label">Lunch</span>
+              <span class="price-value">$19.95</span>
+            </div>
+            <div class="price-box">
+              <span class="price-label">Dinner</span>
+              <span class="price-value">$26.95</span>
+            </div>
+          </div>
+
           <div class="button-text">View Regular Meats →</div>
         </a>
 
         <a class="card premium" href="premium.html">
           <h3>Premium</h3>
           <p>Includes regular level meats plus premium selections.</p>
+
+          <div class="price-row">
+            <div class="price-box">
+              <span class="price-label">Lunch</span>
+              <span class="price-value">$25.95</span>
+            </div>
+            <div class="price-box">
+              <span class="price-label">Dinner</span>
+              <span class="price-value">$32.95</span>
+            </div>
+          </div>
+
           <div class="button-text">View Premium Meats →</div>
         </a>
+      </div>
+
+      <div class="discount-box">
+        Discount Options Placeholder:
+        <span>Kids under ___ inches</span> •
+        <span>Kids ___–___ inches</span> •
+        <span>Seniors over ___</span> •
+        <span>Cash discount</span>
       </div>
     </section>
 
@@ -387,6 +449,11 @@
       <div class="section-title">
         <h2>Choose Your Soup</h2>
         <p>Tap a soup to view flavor notes, allergens, and photos.</p>
+      </div>
+
+      <div class="soup-notice">
+        <span>Notice:</span> All soups are originally made with Pork Bone White Soup as the base.
+        Please request a vegetarian-safe alternative if necessary.
       </div>
 
       <div class="soup-grid">
@@ -420,10 +487,6 @@
     <div class="notice">
       Please specify any dietary information regarding allergies or restrictions when placing your order.<br>
       Consuming raw or undercooked meats may increase your risk of foodborne illness.
-    </div>
-
-    <div class="footer">
-      Thank You & Enjoy
     </div>
 
   </main>
