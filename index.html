@@ -17,7 +17,7 @@
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 32%),
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.10), transparent 32%),
         #0d0d0d;
       color: #f5f1e8;
       font-family: 'Montserrat', Arial, sans-serif;
@@ -29,8 +29,8 @@
       margin: auto;
       padding: 34px 24px;
       background:
-        linear-gradient(rgba(18,18,18,0.94), rgba(18,18,18,0.96)),
-        radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
+        linear-gradient(rgba(18,18,18,0.95), rgba(18,18,18,0.96)),
+        radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
       background-size: auto, 8px 8px;
       border: 1px solid rgba(212, 175, 55, 0.28);
       border-radius: 24px;
@@ -38,18 +38,18 @@
 
     .logo-area {
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
 
     .logo-area img {
-      width: 250px;
-      max-width: 82%;
+      width: 390px;
+      max-width: 92%;
     }
 
     .divider {
       height: 1px;
       background: linear-gradient(to right, transparent, #d4af37, transparent);
-      margin: 28px 0;
+      margin: 26px 0;
     }
 
     h1, h2, h3 {
@@ -61,8 +61,8 @@
     .rules h1 {
       text-align: center;
       color: #f5f1e8;
-      font-size: 44px;
-      margin-bottom: 6px;
+      font-size: 34px;
+      margin-bottom: 4px;
     }
 
     .rules-subtitle {
@@ -71,16 +71,13 @@
       font-weight: 800;
       letter-spacing: 7px;
       text-transform: uppercase;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
+      font-size: 14px;
     }
 
-    .rules-box {
-      max-width: 870px;
+    .rules-list {
+      max-width: 900px;
       margin: auto;
-      padding: 24px;
-      background: #111;
-      border: 1px solid rgba(212, 175, 55, 0.32);
-      border-radius: 18px;
     }
 
     .rule {
@@ -88,15 +85,10 @@
       grid-template-columns: 42px 1fr;
       gap: 14px;
       padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      color: #e7dfd2;
-      line-height: 1.55;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .rule:last-child {
-      border-bottom: none;
+      color: #d4af37;
+      line-height: 1.6;
+      font-size: 16px;
+      font-weight: 700;
     }
 
     .number {
@@ -108,7 +100,7 @@
 
     .badge {
       display: inline-block;
-      color: #d4af37;
+      color: #f5f1e8;
       border: 1px solid rgba(212, 175, 55, 0.75);
       padding: 2px 8px;
       border-radius: 4px;
@@ -117,7 +109,7 @@
       letter-spacing: 1.2px;
       text-transform: uppercase;
       white-space: nowrap;
-      background: rgba(212, 175, 55, 0.08);
+      background: rgba(212, 175, 55, 0.10);
     }
 
     .section-title {
@@ -247,8 +239,12 @@
         padding: 26px 16px;
       }
 
+      .logo-area img {
+        width: 300px;
+      }
+
       .rules h1 {
-        font-size: 34px;
+        font-size: 27px;
       }
 
       .rules-subtitle {
@@ -260,10 +256,7 @@
         font-size: 14px;
       }
 
-      .level-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .level-grid,
       .soup-grid {
         grid-template-columns: 1fr;
       }
@@ -292,7 +285,7 @@
       <h1>All You Can Eat</h1>
       <div class="rules-subtitle">Rules</div>
 
-      <div class="rules-box">
+      <div class="rules-list">
         <div class="rule">
           <div class="number">01</div>
           <div>All you can eat is limited to <span class="badge">90 minutes per table</span>.</div>
@@ -310,27 +303,27 @@
 
         <div class="rule">
           <div class="number">04</div>
-          <div>A <span class="badge">15% gratuity</span> will be added to parties of 6 or more. Gratuity payment must be made using <span class="badge">one payment type only</span>.</div>
+          <div>A <span class="badge">15% gratuity</span> will be added to parties of 6 or more. Payments with gratuity must be made using <span class="badge">one payment type only</span>.</div>
         </div>
 
         <div class="rule">
           <div class="number">05</div>
-          <div>Any leftovers will incur a <span class="badge">$7 additional charge per person</span>.</div>
+          <div>A maximum of <span class="badge">2 credit cards</span> may be used per table.</div>
         </div>
 
         <div class="rule">
           <div class="number">06</div>
-          <div><span class="badge">No take-out/to-go boxes</span> can be provided for leftover food.</div>
+          <div>Any leftovers will incur a <span class="badge">$7 additional charge per person</span>.</div>
         </div>
 
         <div class="rule">
           <div class="number">07</div>
-          <div><span class="badge">Dinner pricing</span> applies all day on weekends, Saturday/Sunday, and holidays.</div>
+          <div><span class="badge">No take-out/to-go boxes</span> can be provided for leftover food.</div>
         </div>
 
         <div class="rule">
           <div class="number">08</div>
-          <div>A maximum of <span class="badge">2 credit cards</span> may be used per table.</div>
+          <div><span class="badge">Dinner pricing</span> applies all day on weekends, Saturday/Sunday, and holidays.</div>
         </div>
       </div>
     </section>
@@ -367,41 +360,15 @@
       </div>
 
       <div class="soup-grid">
-        <a class="soup-link spicy" href="szechuan-spicy.html">
-          Szechuan Spicy <span class="chili">🌶️</span>
-        </a>
-
-        <a class="soup-link spicy" href="korean-kimchi.html">
-          Korean Kimchi <span class="chili">🌶️</span>
-        </a>
-
-        <a class="soup-link" href="taiwanese-satay.html">
-          Taiwanese Satay
-        </a>
-
-        <a class="soup-link" href="japanese-miso.html">
-          Japanese Miso
-        </a>
-
-        <a class="soup-link" href="thai-tom-yum.html">
-          Thai Tom Yum
-        </a>
-
-        <a class="soup-link" href="japanese-curry.html">
-          Japanese Curry
-        </a>
-
-        <a class="soup-link" href="signature-tomato.html">
-          Signature Tomato
-        </a>
-
-        <a class="soup-link" href="japanese-sukiyaki.html">
-          Japanese Sukiyaki
-        </a>
-
-        <a class="soup-link" href="pork-bone-white-soup.html">
-          Pork Bone White Soup
-        </a>
+        <a class="soup-link spicy" href="szechuan-spicy.html">Szechuan Spicy <span class="chili">🌶️</span></a>
+        <a class="soup-link spicy" href="korean-kimchi.html">Korean Kimchi <span class="chili">🌶️</span></a>
+        <a class="soup-link" href="taiwanese-satay.html">Taiwanese Satay</a>
+        <a class="soup-link" href="japanese-miso.html">Japanese Miso</a>
+        <a class="soup-link" href="thai-tom-yum.html">Thai Tom Yum</a>
+        <a class="soup-link" href="japanese-curry.html">Japanese Curry</a>
+        <a class="soup-link" href="signature-tomato.html">Signature Tomato</a>
+        <a class="soup-link" href="japanese-sukiyaki.html">Japanese Sukiyaki</a>
+        <a class="soup-link" href="pork-bone-white-soup.html">Pork Bone White Soup</a>
       </div>
     </section>
 
