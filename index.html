@@ -1,9 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Menu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boiling Pot Boba Street AYCE Menu</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(255, 35, 35, 0.18), transparent 34%),
+        linear-gradient(135deg, #050505, #151515 50%, #070707);
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 28px 16px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 34px;
+      border-radius: 28px;
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
+        radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: auto, 7px 7px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 0 45px rgba(255,0,0,0.22);
+    }
+
+    .logo-area {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .logo-area img {
+      width: 260px;
+      max-width: 80%;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      color: #aaa;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .red-line {
+      height: 3px;
+      background: linear-gradient(to right, transparent, #ff2020, transparent);
+      margin: 26px 0 34px;
+    }
+
+    h1, h2, h3 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    .rules h1 {
+      color: #ff2020;
+      font-size: 52px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 16px rgba(255,32,32,0.35);
+    }
+
+    .rules-box {
+      max-width: 850px;
+      margin: auto;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .rules-box ol {
+      padding-left: 24px;
+      line-height: 1.75;
+      font-weight: 800;
+      color: #e8e8e8;
+    }
+
+    .rules-box li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      color: #ffd43b;
+    }
+
+    .danger {
+      color: #ff4444;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin: 50px 0 30px;
+      text-align: center;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      height: 2px;
+      width: 150px;
+      background: #ff2020;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+    }
+
+    .level-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .card {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 34px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #101010, #222);
+      border: 2px solid rgba(255,255,255,0.12);
+      overflow: hidden;
+      transition: 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.015);
+      box-shadow: 0 0 30px rgba(255,32,32,0.24);
+    }
+
+    .card h3 {
+      font-size: 44px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #d0d0d0;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .regular {
+      border-color: rgba(46,168,255,0.75);
+    }
+
+    .regular h3 {
+      color: #2ea8ff;
+    }
+
+    .premium {
+      border-color: rgba(255,212,59,0.85);
+    }
+
+    .premium h3 {
+      color: #ffd43b;
+    }
+
+    .button-text {
+      margin-top: 20px;
+      color: #ff2020;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .soup-card {
+      max-width: 540px;
+      margin: auto;
+      text-align: center;
+      border-color: #ff2020;
+    }
+
+    .soup-card h3 {
+      color: #ff2020;
+      font-size: 38px;
+    }
+
+    .notice {
+      margin-top: 34px;
+      text-align: center;
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 38px;
+      color: #777;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .page {
+        padding: 24px 16px;
+        border-radius: 20px;
+      }
+
+      .rules h1 {
+        font-size: 42px;
+      }
+
+      .level-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title::before,
+      .section-title::after {
+        width: 48px;
+      }
+
+      .section-title h2 {
+        font-size: 26px;
+      }
+
+      .card h3 {
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<h1>Hello World</h1>
+  <main class="page">
+
+    <div class="logo-area">
+      <img src="logo.png" alt="Boiling Pot Boba Street Logo">
+      <div class="tagline">All You Can Eat Hot Pot Menu</div>
+    </div>
+
+    <div class="red-line"></div>
+
+    <section class="rules">
+      <h1>AYCE Rules</h1>
+
+      <div class="rules-box">
+        <ol>
+          <li>AYCE is limited to <span class="highlight">90 minutes per table</span>.</li>
+          <li>All guests <span class="highlight">at the table</span> must choose the same AYCE level: <span class="highlight">Regular or Premium</span>.</li>
+          <li>Guests will be charged by the <span class="highlight">stated size of the party</span>.</li>
+          <li>A <span class="highlight">15% gratuity</span> will be added to parties of <span class="highlight">6 or more</span>. For gratuity payments, only <span class="highlight">one payment type</span> may be used.</li>
+          <li>Any leftovers will incur a <span class="danger">$7 additional charge per person</span>.</li>
+          <li><span class="danger">No take-out/to-go boxes</span> can be provided for leftover AYCE food.</li>
+          <li><span class="highlight">Dinner pricing</span> applies all day on weekends, Saturday/Sunday, and holidays.</li>
+          <li>A maximum of <span class="highlight">2 credit cards</span> may be used per table.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Pick Your Level</h2>
+      </div>
+
+      <div class="level-grid">
+        <a class="card regular" href="regular.html">
+          <h3>Regular</h3>
+          <p>Classic AYCE level with regular meat options.</p>
+          <div class="button-text">Regular Meats →</div>
+        </a>
+
+        <a class="card premium" href="premium.html">
+          <h3>Premium</h3>
+          <p>Premium AYCE level. Includes regular level meats.</p>
+          <div class="button-text">Premium Meats →</div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Pick Your Soup</h2>
+      </div>
+
+      <a class="card soup-card" href="soup.html">
+        <h3>Soup Lineup</h3>
+        <p>Choose your broth base before ordering.</p>
+        <div class="button-text">View Soups →</div>
+      </a>
+    </section>
+
+    <div class="notice">
+      Please be sure to specify any dietary information regarding allergies or restrictions when placing your order.<br>
+      Consuming raw or undercooked meats may increase your risk of foodborne illness.
+    </div>
+
+    <div class="footer">
+      Thank You & Enjoy
+    </div>
+
+  </main>
 </body>
 </html>
