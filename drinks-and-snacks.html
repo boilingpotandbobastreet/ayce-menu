@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drinks & Snacks</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #0d0d0d;
+      color: #f5f1e8;
+      font-family: 'Montserrat', Arial, sans-serif;
+      padding: 20px 12px;
+    }
+
+    .page {
+      max-width: 950px;
+      margin: auto;
+      padding: 24px 16px;
+      background: #121212;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      border-radius: 24px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .logo-area {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .logo-area img {
+      width: 320px;
+      max-width: 90%;
+    }
+
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d4af37, transparent);
+      margin: 18px 0;
+    }
+
+    .menu-photo {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      background: #101010;
+    }
+
+    @media (max-width: 720px) {
+      .logo-area img {
+        width: 270px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <a class="back-link" href="index.html">← Back to Main Menu</a>
+
+    <div class="logo-area">
+      <img src="logo.png" alt="Boiling Pot & Boba Street Logo">
+    </div>
+
+    <h1>Drinks & Snacks</h1>
+
+    <div class="divider"></div>
+
+    <img class="menu-photo" src="drinks-snacks.jpg" alt="Drinks and Snacks Menu">
+
+  </main>
+</body>
+</html>
