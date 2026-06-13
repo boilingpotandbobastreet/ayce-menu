@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boiling Pot & Boba Street</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #f5f1e8;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.96);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .nav-logo img {
+      width: 230px;
+      max-width: 60vw;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-links a:hover {
+      color: #a92b24;
+    }
+
+    .hero {
+      height: calc(100vh - 76px);
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        rgba(0,0,0,0.28),
+        rgba(0,0,0,0.45)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 48px;
+      margin-bottom: 14px;
+      color: #f5f1e8;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.65);
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 26px;
+      color: #f5f1e8;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.65);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+    }
+
+    .primary {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .secondary {
+      border: 2px solid #f5f1e8;
+      color: #f5f1e8;
+      background: rgba(0,0,0,0.18);
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    .dark-section {
+      background:
+        linear-gradient(rgba(18,18,18,0.94), rgba(18,18,18,0.96)),
+        radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: auto, 8px 8px;
+    }
+
+    .light-section {
+      background: #f5f1e8;
+      color: #2a160c;
+    }
+
+    h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 42px;
+      margin-bottom: 22px;
+    }
+
+    .about-text {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 600;
+      color: #e3d8c9;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 18px;
+      padding: 26px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .info-card h3 {
+      font-family: 'Cinzel', Georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 22px;
+      margin-bottom: 14px;
+      color: #2a160c;
+    }
+
+    .info-card p,
+    .info-card a {
+      color: #2a160c;
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .menu-cta {
+      text-align: center;
+      background: #0d0d0d;
+      color: #f5f1e8;
+    }
+
+    .menu-cta p {
+      color: #b8b1a7;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 26px;
+      background: #080808;
+      color: #8f8678;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        height: auto;
+        padding: 12px 16px;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-logo img {
+        width: 210px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        height: calc(100vh - 118px);
+      }
+
+      .hero-content h1 {
+        font-size: 34px;
+      }
+
+      .hero-content p {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 52px 18px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a class="nav-logo" href="home.html">
+      <img src="logo.png" alt="Boiling Pot & Boba Street Logo">
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Menu</a>
+      <a href="drinks-snacks.html">Drinks</a>
+      <a href="#about">About</a>
+      <a href="#info">Hours</a>
+      <a href="#info">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="restaurant-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Boiling Pot & Boba Street</h1>
+        <p>
+          All-you-can-eat hot pot, rich broths, fresh ingredients, boba drinks, and a cozy table-side dining experience.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="hero-button primary" href="index.html">View AYCE Menu</a>
+          <a class="hero-button secondary" href="#info">Hours & Location</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="dark-section">
+    <h2>About Us</h2>
+
+    <p class="about-text">
+      Welcome to Boiling Pot & Boba Street in Northridge. We specialize in interactive hot pot dining with flavorful soup bases, fresh ingredients, and customizable options for every table. Whether you are here for a cozy dinner, a casual hangout, or a lively group meal, our goal is to bring warmth, flavor, and comfort to every visit.
+    </p>
+  </section>
+
+  <section id="info" class="light-section">
+    <h2>Visit Us</h2>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Location</h3>
+        <p>
+          19524 Nordhoff Street Suite 3<br>
+          Northridge, CA 91324
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Hours</h3>
+        <p>
+          Sunday - Thursday: 11 AM - 10 PM<br>
+          Friday - Saturday: 11 AM - 10:30 PM<br><br>
+          Kitchen closes 30 minutes before closing.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Contact</h3>
+        <p>
+          <a href="tel:7472065013">(747)-206-5013</a><br>
+          <a href="mailto:boilingpotandbobastreet@gmail.com">boilingpotandbobastreet@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-cta">
+    <h2>Ready to Order?</h2>
+    <p>View our all-you-can-eat menu, soup bases, meats, drinks, and snacks.</p>
+
+    <a class="hero-button primary" href="index.html">Open Menu</a>
+  </section>
+
+  <footer class="footer">
+    © Boiling Pot & Boba Street
+  </footer>
+
+</body>
+</html>
