@@ -8,15 +8,9 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: #0d0d0d;
@@ -28,12 +22,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      height: 76px;
+      min-height: 76px;
       background: rgba(255, 255, 255, 0.96);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 8%;
+      padding: 10px 8%;
       box-shadow: 0 2px 12px rgba(0,0,0,0.18);
     }
 
@@ -44,8 +38,9 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 20px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -55,10 +50,6 @@
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-    }
-
-    .nav-links a:hover {
-      color: #a92b24;
     }
 
     .hero {
@@ -78,19 +69,12 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        rgba(0,0,0,0.28),
-        rgba(0,0,0,0.45)
-      );
+      background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.5));
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 20px;
-    }
-
-    .hero-content {
-      max-width: 760px;
     }
 
     .hero-content h1 {
@@ -99,8 +83,7 @@
       letter-spacing: 5px;
       font-size: 48px;
       margin-bottom: 14px;
-      color: #f5f1e8;
-      text-shadow: 0 3px 18px rgba(0,0,0,0.65);
+      text-shadow: 0 3px 18px rgba(0,0,0,0.7);
     }
 
     .hero-content p {
@@ -108,18 +91,17 @@
       font-weight: 700;
       line-height: 1.6;
       margin-bottom: 26px;
-      color: #f5f1e8;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.65);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.7);
     }
 
-    .hero-buttons {
+    .button-row {
       display: flex;
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
     }
 
-    .hero-button {
+    .button {
       display: inline-block;
       text-decoration: none;
       padding: 13px 22px;
@@ -179,7 +161,7 @@
     .info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
       max-width: 1050px;
       margin: auto;
     }
@@ -188,7 +170,6 @@
       background: white;
       border-radius: 18px;
       padding: 26px;
-      border: 1px solid rgba(0,0,0,0.08);
       box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
 
@@ -198,7 +179,6 @@
       letter-spacing: 2px;
       font-size: 22px;
       margin-bottom: 14px;
-      color: #2a160c;
     }
 
     .info-card p,
@@ -208,6 +188,60 @@
       line-height: 1.7;
       font-weight: 600;
       text-decoration: none;
+    }
+
+    .map-preview {
+      display: block;
+      max-width: 900px;
+      margin: 34px auto 0;
+      text-align: center;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .map-preview img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      margin-bottom: 10px;
+    }
+
+    .review-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .review-button {
+      text-decoration: none;
+      background: #101010;
+      color: #f5f1e8;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .review-button span {
+      color: #d4af37;
+      margin-right: 8px;
+      font-weight: 900;
+    }
+
+    .jobs-text {
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.8;
+      font-weight: 700;
+    }
+
+    .jobs-text a {
+      color: #a92b24;
+      font-weight: 900;
     }
 
     .menu-cta {
@@ -233,10 +267,9 @@
 
     @media (max-width: 800px) {
       .navbar {
-        height: auto;
-        padding: 12px 16px;
         flex-direction: column;
         gap: 10px;
+        padding: 12px 16px;
       }
 
       .nav-logo img {
@@ -244,9 +277,8 @@
       }
 
       .nav-links {
-        gap: 14px;
-        flex-wrap: wrap;
         justify-content: center;
+        gap: 14px;
       }
 
       .nav-links a {
@@ -254,11 +286,11 @@
       }
 
       .hero {
-        height: calc(100vh - 118px);
+        height: calc(100vh - 120px);
       }
 
       .hero-content h1 {
-        font-size: 34px;
+        font-size: 32px;
       }
 
       .hero-content p {
@@ -270,7 +302,7 @@
       }
 
       h2 {
-        font-size: 32px;
+        font-size: 31px;
       }
 
       .info-grid {
@@ -284,20 +316,20 @@
 
   <nav class="navbar">
     <a class="nav-logo" href="home.html">
-      <img src="logo3.png" alt="Boiling Pot & Boba Street Logo">
+      <img src="logo.png" alt="Boiling Pot & Boba Street Logo">
     </a>
 
     <div class="nav-links">
       <a href="index.html">Menu</a>
-      <a href="drinks-snacks.html">Drinks</a>
       <a href="#about">About</a>
       <a href="#info">Hours</a>
-      <a href="#info">Contact</a>
+      <a href="#jobs">Jobs</a>
+      <a href="#reviews">Reviews</a>
     </div>
   </nav>
 
   <header class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay muted loop playsinline poster="restaurant-poster.jpg">
       <source src="restaurant-video.mp4" type="video/mp4">
     </video>
 
@@ -308,9 +340,9 @@
           All-you-can-eat hot pot, rich broths, fresh ingredients, boba drinks, and a cozy table-side dining experience.
         </p>
 
-        <div class="hero-buttons">
-          <a class="hero-button primary" href="index.html">View AYCE Menu</a>
-          <a class="hero-button secondary" href="#info">Hours & Location</a>
+        <div class="button-row">
+          <a class="button primary" href="index.html">View AYCE Menu</a>
+          <a class="button secondary" href="#info">Hours & Location</a>
         </div>
       </div>
     </div>
@@ -341,7 +373,8 @@
         <p>
           Sunday - Thursday: 11 AM - 10 PM<br>
           Friday - Saturday: 11 AM - 10:30 PM<br><br>
-          Kitchen closes 30 minutes before closing.
+          Last seating is 1 hour before close.<br>
+          Kitchen closes 30 minutes before close.
         </p>
       </div>
 
@@ -353,13 +386,43 @@
         </p>
       </div>
     </div>
+
+    <a class="map-preview" href="https://www.google.com/maps/dir/?api=1&destination=19524+Nordhoff+St+Suite+3+Northridge+CA+91324" target="_blank">
+      <img src="map-preview.jpg" alt="Open Boiling Pot & Boba Street in Google Maps">
+      <span>Open in Google Maps →</span>
+    </a>
+  </section>
+
+  <section id="reviews" class="dark-section">
+    <h2>Find Us Online</h2>
+
+    <div class="review-buttons">
+      <a class="review-button" href="https://www.google.com/search?q=19524+Nordhoff+Street+Boiling+Pot+And+Boba+Street&oq=19524+Nordhoff+Street+Boiling+Pot+And+Boba+Street&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhAMgoIAhAAGIAEGKIEMgoIAxAAGIAEGKIE0gEIMjExMGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x80c29b0b26d540cb:0xa7c1ccfb09764830,1,,,," target="_blank">
+        <span>G</span> Google
+      </a>
+
+      <a class="review-button" href="YELP_LINK_HERE" target="_blank">
+        <span>Y</span> Yelp
+      </a>
+    </div>
+  </section>
+
+  <section id="jobs" class="light-section">
+    <h2>Jobs</h2>
+
+    <p class="jobs-text">
+      Interested in joining our team?<br>
+      Please email your resume to:
+      <br>
+      <a href="mailto:boilingpotandbobastreet@gmail.com">boilingpotandbobastreet@gmail.com</a>
+    </p>
   </section>
 
   <section class="menu-cta">
     <h2>Ready to Order?</h2>
-    <p>View our all-you-can-eat menu, soup bases, meats, drinks, and snacks.</p>
+    <p>View our All You Can Eat menu, soup bases, meats, drinks, and snacks.</p>
 
-    <a class="hero-button primary" href="index.html">Open Menu</a>
+    <a class="button primary" href="index.html">Open Menu</a>
   </section>
 
   <footer class="footer">
