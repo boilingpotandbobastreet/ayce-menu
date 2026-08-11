@@ -420,10 +420,94 @@
         font-size: 25px;
       }
     }
+    /* MENU VIEWING NOTICE */
+.menu-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.menu-modal-box {
+  width: 100%;
+  max-width: 460px;
+  background: linear-gradient(145deg, #101010, #181818);
+  border: 1px solid rgba(212, 175, 55, 0.65);
+  border-radius: 18px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.menu-modal-box h2 {
+  color: #d4af37;
+  font-size: 25px;
+  margin-bottom: 16px;
+  letter-spacing: 3px;
+}
+
+.menu-modal-box p {
+  color: #f5f1e8;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.menu-modal-box strong {
+  color: #d4af37;
+}
+
+.menu-modal-button {
+  border: 1px solid #d4af37;
+  background: #d4af37;
+  color: #0d0d0d;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 13px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.menu-modal-button:hover {
+  background: #f0cc55;
+  transform: translateY(-2px);
+}
+
+.menu-modal.hidden {
+  display: none;
+}
   </style>
 </head>
 
 <body>
+
+  <div class="menu-modal" id="menuNotice">
+  <div class="menu-modal-box">
+    <h2>Menu Notice</h2>
+
+    <p>
+      This digital menu is provided for
+      <strong>viewing purposes only</strong>.
+      <br><br>
+      When you are ready to order, please place your order
+      <strong>with your server.</strong>
+    </p>
+
+    <button class="menu-modal-button" onclick="closeMenuNotice()">
+      View Menu
+    </button>
+  </div>
+</div>
+  
   <main class="page">
     <a class="home-link" href="home.html">
     ← Restaurant Homepage
@@ -470,11 +554,11 @@
           <div class="price-row">
             <div class="price-box">
               <span class="price-label">Lunch<br>11 AM - 3 PM</span>
-              <span class="price-value">$19.95</span>
+              <span class="price-value">$21.95</span>
             </div>
             <div class="price-box">
               <span class="price-label">Dinner<br>3 PM - Close</span>
-              <span class="price-value">$26.95</span>
+              <span class="price-value">$28.95</span>
             </div>
           </div>
 
@@ -488,11 +572,11 @@
           <div class="price-row">
             <div class="price-box">
               <span class="price-label">Lunch<br>11 AM - 3 PM</span>
-              <span class="price-value">$25.95</span>
+              <span class="price-value">$27.95</span>
             </div>
             <div class="price-box">
               <span class="price-label">Dinner<br>3 PM - Close</span>
-              <span class="price-value">$32.95</span>
+              <span class="price-value">$34.95</span>
             </div>
           </div>
 
@@ -578,5 +662,13 @@
     </div>
 
   </main>
+    </main>
+
+  <script>
+    function closeMenuNotice() {
+      document.getElementById("menuNotice").classList.add("hidden");
+    }
+  </script>
+
 </body>
 </html>
