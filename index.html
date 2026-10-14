@@ -14,7 +14,7 @@
 /* PRICE UPDATE BANNER */
 .price-banner {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
   width: 340px;
   max-width: calc(100% - 40px);
@@ -28,7 +28,8 @@
   font-family: 'Montserrat', sans-serif;
   z-index: 9998;
 
-  animation: bannerSlideIn 0.6s ease-out;
+  opacity: 0;
+  animation: bannerSlideIn 0.6s ease-out 2s forwards;
 }
 
 .price-banner h4 {
@@ -173,7 +174,7 @@
       grid-template-columns: 36px 1fr;
       gap: 12px;
       padding: 7px 0;
-      color: #d4af37;
+      color: #f5f1e8;
       line-height: 1.45;
       font-size: 14px;
       font-weight: 700;
@@ -187,7 +188,7 @@
     }
 
     .badge {
-      color: #f5f1e8;
+      color: #d4af37;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -630,14 +631,14 @@
 
       <div class="rules-list">
         <div class="rule"><div class="number">01</div><div>All you can eat is limited to <span class="badge">90 minutes per table</span>.</div></div>
-        <div class="rule"><div class="number">02</div><div>All guests at the table must choose the same level: <span class="badge">Regular or Premium</span>.</div></div>
+        <div class="rule"><div class="number">02</div><div><span class="badge">All guests at the table</span> must choose the same level: <span class="badge">Regular or Premium</span>.</div></div>
         <div class="rule"><div class="number">03</div><div>Guests will be charged by the <span class="badge">stated size of the party</span>.</div></div>
-        <div class="rule"><div class="number">03</div><div>Hot Pots may <span class="badge">not be shared with non-paying party members</span>.</div></div>
-        <div class="rule"><div class="number">04</div><div>A <span class="badge">15% gratuity</span> will be added to parties of <span class="badge">6</span> or more.</div></div>
-        <div class="rule"><div class="number">05</div><div>A maximum of <span class="badge">2 credit cards</span> may be used per table.</div></div>
-        <div class="rule"><div class="number">06</div><div>Any leftovers will incur a <span class="badge">$7 additional charge per person</span>.</div></div>
-        <div class="rule"><div class="number">07</div><div><span class="badge">No take-out/to-go boxes</span> can be provided for leftover food.</div></div>
-        <div class="rule"><div class="number">08</div><div><span class="badge">Dinner pricing</span> applies all day on weekends, Saturday/Sunday, and holidays.</div></div>
+        <div class="rule"><div class="number">04</div><div>Hot Pots may <span class="badge">not be shared with non-paying party members</span>.</div></div>
+        <div class="rule"><div class="number">05</div><div>A <span class="badge">15% gratuity</span> will be added to parties of <span class="badge">6</span> or more.</div></div>
+        <div class="rule"><div class="number">06</div><div>A maximum of <span class="badge">2 credit cards</span> may be used per table.</div></div>
+        <div class="rule"><div class="number">07</div><div>Any leftovers will incur a <span class="badge">$7 additional charge per person</span>.</div></div>
+        <div class="rule"><div class="number">08</div><div><span class="badge">No take-out/to-go boxes</span> can be provided for leftover food.</div></div>
+        <div class="rule"><div class="number">09</div><div><span class="badge">Dinner pricing</span> applies all day on weekends, Saturday/Sunday, and holidays.</div></div>
       </div>
     </section>
 
