@@ -75,7 +75,8 @@
 
 @media (max-width: 600px) {
   .price-banner {
-    bottom: 12px;
+    top: 12px;
+    bottom: auto;
     right: 12px;
     width: 290px;
     padding: 14px 30px 14px 14px;
@@ -85,6 +86,8 @@
 @media (prefers-reduced-motion: reduce) {
   .price-banner {
     animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
     
@@ -174,7 +177,7 @@
       grid-template-columns: 36px 1fr;
       gap: 12px;
       padding: 7px 0;
-      color: #f5f1e8;
+      color: #d4af37;
       line-height: 1.45;
       font-size: 14px;
       font-weight: 700;
@@ -188,7 +191,7 @@
     }
 
     .badge {
-      color: #d4af37;
+      color: #f5f1e8;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 1px;
